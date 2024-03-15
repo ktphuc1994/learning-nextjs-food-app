@@ -5,7 +5,10 @@ import Image from 'next/image';
 // import local styles and assets
 import styles from './MainHeader.module.css';
 import logeImg from '@/assets/logo.png';
+
+// import local components
 import MainHeaderBackground from './MainHeaderBackground';
+import NavLink from './NavLink';
 
 const MainHeader = () => {
   return (
@@ -20,10 +23,10 @@ const MainHeader = () => {
         <nav className={styles.nav}>
           <ul>
             <li>
-              <Link href='/meals'>Browse Meals</Link>
+              <NavLink href='/meals'>Browse Meals</NavLink>
             </li>
             <li>
-              <Link href='/community'>Community</Link>
+              <NavLink href='/community'>Community</NavLink>
             </li>
           </ul>
         </nav>
