@@ -1,8 +1,9 @@
 const MealDetails = () => {
   return (
-    <div>
-      <h1>MealDetails</h1>
-    </div>
+    <>
+      <header></header>
+      <main></main>
+    </>
   );
 };
 
