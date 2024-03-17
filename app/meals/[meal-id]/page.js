@@ -4,6 +4,7 @@ import Image from 'next/image';
 // import styles and assets
 import styles from './page.module.css';
 import { getMeal } from '@/lib/meals';
+import { getCloudinaryUrl } from '@/utils';
 
 export default function MealDetails({ params }) {
   const meal = getMeal(params['meal-id']);
@@ -16,7 +17,7 @@ export default function MealDetails({ params }) {
     <>
       <header className={styles.header}>
         <div className={styles.image}>
-          <Image src={meal.image} alt={meal.title} fill />
+          <Image src={getCloudinaryUrl(meal.image)} alt={meal.title} fill />
         </div>
         <div className={styles.headerText}>
           <h1>{meal.title}</h1>
