@@ -1,10 +1,25 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
-// import styles and assets
-import styles from './page.module.css';
+// import local utils
 import { getMeal } from '@/lib/meals';
 import { getCloudinaryUrl } from '@/utils';
+
+// import styles and assets
+import styles from './page.module.css';
+
+export async function generateMetadata({ params }) {
+  const meal = getMeal(params['meal-id']);
+
+  if (!meal) {
+    notFound();
+  }
+
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
 
 export default function MealDetails({ params }) {
   const meal = getMeal(params['meal-id']);
